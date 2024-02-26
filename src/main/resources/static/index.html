@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +6,20 @@
     <title>Main Page</title>
 </head>
 <body>
-    <h1>Welcome to the Main Page</h1>
-    <!-- Add a button that redirects to the next page -->
-    <form action="/navigate-to-next-page" method="get">
-        <button type="submit">Go to Next Page</button>
-    </form>
+<h1>Welcome to the Main Page</h1>
+
+<!-- Form to submit choice -->
+<form action="/default-action" method="post" id="myForm">
+    <label for="choice">Select a page:</label><br>
+    <input type="radio" id="page1" name="choice" value="page1">
+    <label for="page1">Next Page</label><br>
+    <input type="radio" id="page2" name="choice" value="page2">
+    <label for="page2">Another Page</label><br>
+    <!-- Use formaction attribute to override default form submission URL -->
+    <button type="submit" form="myForm" formaction="/submit-form">Submit</button>
+</form>
+
+<!-- Error message if any -->
+<!-- <p style="color: red;">Error message goes here</p> -->
 </body>
 </html>
